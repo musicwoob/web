@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+  
+  #countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .time {
+    margin: 0 10px;
+    font-size: 2em;
+  }
+  
+  .social-icons {
+    margin-top: 20px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+  }
+  
+  .social-icons img {
+    width: 40px;
+  }
+  
