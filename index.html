@@ -3,29 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon | Music Label</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Welcome to Our Website</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS stylesheet -->
 </head>
 <body>
-  <div class="container">
-    <div class="content">
-      <h1>Coming Soon</h1>
-      <p>Exciting things are happening. Stay tuned!</p>
-      <div id="countdown">
-        <div id="days" class="time"></div>
-        <div id="hours" class="time"></div>
-        <div id="minutes" class="time"></div>
-        <div id="seconds" class="time"></div>
-      </div>
-      <p>Follow us on social media for updates:</p>
-      <div class="social-icons">
-        <!-- Add your social media icons and links here -->
-        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
+  <header>
+    <h1>Welcome to Our Website</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to our website! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales tellus, ut faucibus sapien. Donec sollicitudin ligula id magna tempor, at cursus lorem sagittis.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Service 1</li>
+      <li>Service 2</li>
+      <li>Service 3</li>
+      <!-- Add more services as needed -->
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Contact us for more information:</p>
+    <form action="contact_form.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 MusicWoob. All rights reserved.</p>
+  </footer>
 </body>
 </html>
