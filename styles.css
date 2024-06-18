@@ -3,6 +3,77 @@ body {
     font-family:'Courier New', Courier, monospace ;
 }
 
+
+
+/* home page */
+
+
+.firstsection {
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.firstsection h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.firstsection p{
+    padding: 20px;
+    margin: 10px;
+    border-style: double;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* home page end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .navbar {
     background-color: #000000;
     color: #fff;
