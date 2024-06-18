@@ -8,6 +8,38 @@ body {
 /* home page */
 
 
+
+.home-page {
+    padding: 20px;
+    margin: 20px;
+    border: #000000;
+    border-style: groove;
+}
+
+.firstsection button {
+    background-color: #dc3545;
+    padding: 12px;
+    font-size: 17px;
+}
+
+.firstsection button:hover {
+    background-color: #020202;
+    
+}
+
+
+.firstsection button a {
+   color: rgb(255, 249, 249);
+   text-decoration: none;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+.buttonfg {
+    border-style: double;
+}
+
+
+
 .firstsection {
     padding: 10px;
     margin: 10px;
