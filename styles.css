@@ -61,6 +61,13 @@ body {
     text-align: left;
 }
 
+.firstsection2 p{
+    padding: 20px;
+    margin: 10px;
+    border-style: double;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+}
 
 
 
