@@ -10,10 +10,9 @@ body {
 
 
 .home-page {
-    padding: 20px;
-    margin: 20px;
-    border: #000000;
-    border-style: groove;
+    padding:10px;
+    margin: 10px;
+
 }
 
 .firstsection button {
