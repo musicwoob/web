@@ -11,7 +11,75 @@
     <meta name= “robots” content= “INDEX, FOLLOW”>
     <script src="/script.js"></script>
     <link rel="icon" href="/image/logo/logo.png" type="image/icon type">
-    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.biography-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.details {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
 
    
 </head>
@@ -57,7 +125,28 @@
 
 
 
+  <div class="biography-container">
+        <div class="photo">
+            <img src="artist-photo.jpg" alt="Artist Photo">
+        </div>
+        <div class="details">
+            <h1>Artist Name</h1>
+            <h2>Short Bio</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod leo ac auctor auctor.</p>
 
+            <h2>Achievements</h2>
+            <ul>
+                <li>Award 1 - Year</li>
+                <li>Award 2 - Year</li>
+                <li>Award 3 - Year</li>
+                <!-- Add more achievements as needed -->
+            </ul>
+
+            <h2>Contact</h2>
+            <p>Email: artist@example.com</p>
+            <p>Website: <a href="https://artistwebsite.com">artistwebsite.com</a></p>
+        </div>
+    </div>
 
 
 
