@@ -30,16 +30,16 @@
     <form action="https://api.web3forms.com/submit" method="POST">
   <input type="hidden" name="access_key" value="2be62326-47d8-4d23-93ef-44799b7f413a">
       <label>Full Name</label>
-      <input type="text" placeholder="Your name" required />
+      <input type="text" name="name" placeholder="Your name" required />
 
       <label>Email Address</label>
-      <input type="email" placeholder="your@email.com" required />
+      <input type="email" name="email" placeholder="your@email.com" required />
 
       <label>Song Name</label>
-      <input type="text" placeholder="Original song title" required />
+      <input type="text" name="name" placeholder="Original song title" required />
 
       <label>Original Artist / Label</label>
-      <input type="text" placeholder="Artist or music label" required />
+      <input type="text" name="name" placeholder="Artist or music label" required />
 
       <label>Type of Remix</label>
       <select>
@@ -58,7 +58,7 @@
       </select>
 
       <label>Details / Message</label>
-      <textarea rows="5" placeholder="Explain how you want to remix the song"></textarea>
+      <textarea rows="5" name="message" placeholder="Explain how you want to remix the song"></textarea>
 
       <button type="submit">Submit License Request</button>
     </form>
