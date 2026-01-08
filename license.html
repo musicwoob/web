@@ -41,6 +41,28 @@
       <label>Original Artist / Label</label>
       <input type="text" name="name" placeholder="Artist or music label" required />
 
+
+
+      <div class="form-group">
+  <label for="remix-type">Type of Remix</label>
+  <select id="remix-type" name="name">
+    <option value="dj">DJ Remix</option>
+    <option value="lofi">Lo‑fi Remix</option>
+    <option value="trap">Trap / EDM Remix</option>
+    <option value="other">Other</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="remix-purpose">Purpose of Remix</label>
+  <select id="remix-purpose" name="name">
+    <option value="commercial">Commercial Release</option>
+    <option value="social">YouTube / Social Media</option>
+    <option value="live">Live Performance</option>
+    <option value="non-commercial">Non‑Commercial</option>
+  </select>
+</div>
+
       <label>Type of Remix</label>
       <select>
         <option>DJ Remix</option>
@@ -56,6 +78,9 @@
         <option>Live Performance</option>
         <option>Non‑Commercial</option>
       </select>
+
+
+      
 
       <label>Details / Message</label>
       <textarea rows="5" name="message" placeholder="Explain how you want to remix the song"></textarea>
