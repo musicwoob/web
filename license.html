@@ -25,7 +25,10 @@
   <div class="container">
     <h2>Remix License Request Form</h2>
 
-    <form>
+  
+      
+    <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="2be62326-47d8-4d23-93ef-44799b7f413a">
       <label>Full Name</label>
       <input type="text" placeholder="Your name" required />
 
@@ -59,6 +62,16 @@
 
       <button type="submit">Submit License Request</button>
     </form>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="2be62326-47d8-4d23-93ef-44799b7f413a">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+    
   </div>
 
   <footer>
