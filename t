@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MusicWoob | Licensing & Distribution</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================
+       GLOBAL STYLES
+    ========================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+    header {
+      border-bottom: 1px solid #222;
+      padding: 20px 0;
+    }
+
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Logo Box */
+    .logo-box {
+      width: 70px;
+      height: 70px;
+      border: 2px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav li a {
+      font-size: 14px;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    nav li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 1px;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    nav li a:hover::after {
+      width: 100%;
+    }
+
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #000 60%, #111);
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 2px solid #fff;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+
+    /* =========================
+       ABOUT SECTION
+    ========================== */
+    .about {
+      padding: 80px 0;
+      border-top: 1px solid #222;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #bbb;
+    }
+
+    .about-box {
+      border: 1px solid #333;
+      padding: 30px;
+    }
+
+
+    /* =========================
+       SERVICES
+    ========================== */
+    .services {
+      padding: 80px 0;
+      background: #050505;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      border: 1px solid #333;
+      padding: 30px;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.03);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: 0.4s;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       PROCESS
+    ========================== */
+    .process {
+      padding: 80px 0;
+      border-top: 1px solid #222;
+    }
+
+    .process h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 32px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .step {
+      padding: 25px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+
+    .step span {
+      display: block;
+      font-size: 30px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================== */
+    .contact {
+      padding: 80px 0;
+      background: #050505;
+    }
+
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      background: transparent;
+      border: 1px solid #333;
+      color: #fff;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #fff;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer {
+      border-top: 1px solid #222;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: 70px;
+      height: 70px;
+      border: 2px solid #fff;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: #aaa;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      nav ul {
+        gap: 15px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-wrapper">
+
+      <!-- Logo Space -->
+      <div class="logo-box">
+        LOGO
+      </div
+
+      <!-- Navigation -->
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Empowering Music Rights & Distribution</h1>
+        <p>
+          MusicWoob provides professional licensing, publishing, and global
+          music distribution services for remixers, producers, and filmmakers.
+        </p>
+        <a href="#contact" class="hero-btn">Get Licensed</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+
+      <div>
+        <h2>About MusicWoob</h2>
+        <p>
+          MusicWoob is a modern music licensing and publishing company dedicated
+          to empowering creators. We provide legal access to remix, reproduce,
+          and distribute music across OTT and streaming platforms worldwide.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Our Mission</h3>
+        <p>
+          To protect artists' rights while enabling creators to innovate,
+          monetize, and grow in the digital music ecosystem.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <h2>Our Services</h2>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <h3>Remix Licensing</h3>
+          <p>
+            Legal authorization for DJs and remixers to recreate and distribute
+            copyrighted music.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Reproduction Rights</h3>
+          <p>
+            Secure reproduction licenses for films, ads, and digital media.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Music Distribution</h3>
+          <p>
+            Global distribution to Spotify, Apple Music, YouTube, Amazon, and
+            OTT platforms.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Publishing Management</h3>
+          <p>
+            Royalty collection, rights management, and catalog administration.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+
+      <h2>How It Works</h2>
+
+      <div class="process-steps">
+
+        <div class="step">
+          <span>01</span>
+          <p>Submit your project and licensing request.</p>
+        </div>
+
+        <div class="step">
+          <span>02</span>
+          <p>Rights verification and legal clearance.</p>
+        </div>
+
+        <div class="step">
+          <span>03</span>
+          <p>License issuance and contract agreement.</p>
+        </div>
+
+        <div class="step">
+          <span>04</span>
+          <p>Distribution and royalty management.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <h2>Contact MusicWoob</h2>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Project Type (Remix / Film / Distribution)">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Request</button>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <!-- Footer Logo -->
+      <div class="footer-logo">
+        LOGO
+      </div>
+
+      <p>
+        © 2026 MusicWoob. All Rights Reserved. | Licensing • Publishing •
+        Distribution
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
