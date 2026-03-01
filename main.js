@@ -142,6 +142,6 @@ if (modal && loginTrigger && loginForm && loginMessage && loginEmail) {
       return;
     }
 
-    loginMessage.textContent = "Login successful. Redirecting to dashboard...";
+    loginMessage.textContent = "Please enter a valid email and password...";
   });
 }
