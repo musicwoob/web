@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MusicLicense.in · भारत का संगीत लाइसेंस प्लेटफॉर्म</title>
+  <!-- Tailwind + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(145deg, #0b1120 0%, #19223c 100%); }
+    .card-hover { transition: all 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+    .lang-switch { cursor: pointer; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- navbar -->
+  <nav class="bg-white shadow-sm sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- logo -->
+        <div class="flex items-center space-x-2">
+          <span class="text-2xl font-bold text-indigo-700">🎵 MusicLicense.in</span>
+          <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full">भारत का अपना</span>
+        </div>
+        <!-- desktop menu -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#home" class="hover:text-indigo-600">होम</a>
+          <a href="#licenses" class="hover:text-indigo-600">लाइसेंस</a>
+          <a href="#partners" class="hover:text-indigo-600">लेबल साझेदार</a>
+          <a href="#pricing" class="hover:text-indigo-600">मूल्य</a>
+          <a href="#contact" class="hover:text-indigo-600">संपर्क</a>
+        </div>
+        <!-- cta & lang -->
+        <div class="flex items-center space-x-3">
+          <button class="hidden md:inline-flex bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-indigo-700 shadow-sm">लाइसेंस लें ➔</button>
+          <button class="lang-switch text-gray-500 border rounded-full p-2 text-sm" onclick="alert('हिंदी / English टॉगल (डेमो)')">🌐 हिंदी</button>
+          <!-- mobile menu button -->
+          <button class="md:hidden text-gray-600" id="menuBtn"><i class="fas fa-bars text-2xl"></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- mobile dropdown (simple) -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-4 py-3 space-y-2 text-base">
+      <a href="#home" class="block py-1">होम</a><a href="#licenses" class="block py-1">लाइसेंस</a><a href="#partners" class="block py-1">लेबल</a><a href="#pricing" class="block py-1">मूल्य</a><a href="#contact" class="block py-1">संपर्क</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="gradient-bg text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+              <span class="text-yellow-300">भारत के हर गाने</span> का लीगल लाइसेंस,<br>बस एक क्लिक पर।
+            </h1>
+            <p class="text-lg text-indigo-100 mt-6 max-w-xl">
+              Cover song, remix, film / web series sync — सभी मेजर लेबल्स (T-Series, Sony, Zee, Tips, Saregama …) से जुड़े। हर भारतीय भाषा में।
+            </p>
+            <!-- search bar mock -->
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <div class="flex-1 relative">
+                <i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i>
+                <input type="text" placeholder="गाना, एल्बम या कलाकार खोजें..." class="w-full pl-12 pr-4 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-300">
+              </div>
+              <button class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold px-8 py-3 rounded-full shadow-md transition">खोजें</button>
+            </div>
+            <p class="text-indigo-200 text-sm mt-4">जैसे: "Kesariya", "Jai Shree Ram", "Vaaste" – 2 लाख+ गाने उपलब्ध</p>
+          </div>
+          <div class="hidden md:block">
+            <img src="https://via.placeholder.com/500x400/1e293b/64748b?text=Music+License+India" alt="Hero" class="rounded-2xl shadow-2xl">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNER LABELS (scrolling strip) -->
+    <section id="partners" class="bg-white py-8 border-y">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-sm uppercase tracking-wider text-gray-500 mb-4">हमसे जुड़े प्रमुख लेबल</p>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <span class="text-2xl font-bold text-gray-300">T-Series</span>
+          <span class="text-2xl font-bold text-gray-300">Sony Music</span>
+          <span class="text-2xl font-bold text-gray-300">Zee Music</span>
+          <span class="text-2xl font-bold text-gray-300">Tips</span>
+          <span class="text-2xl font-bold text-gray-300">Saregama</span>
+          <span class="text-2xl font-bold text-gray-300">Times Music</span>
+          <span class="text-xl font-semibold text-indigo-400">+20 और</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LICENSE TYPES -->
+    <section id="licenses" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900">हर जरूरत के लिए <span class="text-indigo-600">लाइसेंस</span></h2>
+          <p class="text-gray-600 mt-4 max-w-2xl mx-auto">चाहे कवर गाना हो, रीमिक्स, या वेब सीरीज में गाना डालना हो — सही लाइसेंस चुनें।</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- कवर वर्जन -->
+          <div class="bg-white p-6 rounded-2xl shadow-md card-hover border-l-4 border-indigo-500">
+            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 text-xl mb-4"><i class="fas fa-microphone-alt"></i></div>
+            <h3 class="text-xl font-bold mb-2">कवर सॉन्ग लाइसेंस</h3>
+            <p class="text-gray-600 text-sm">मूल गाने को अपनी आवाज़ में गाएँ, YouTube/Spotify पर डालें। बोल और धुन का अधिकार शामिल।</p>
+            <div class="mt-4 text-indigo-600 font-semibold">₹ 999 से शुरू <i class="fas fa-arrow-right ml-1 text-sm"></i></div>
+          </div>
+          <!-- रीमिक्स -->
+          <div class="bg-white p-6 rounded-2xl shadow-md card-hover border-l-4 border-purple-500">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-xl mb-4"><i class="fas fa-sliders-h"></i></div>
+            <h3 class="text-xl font-bold mb-2">रीमिक्स लाइसेंस</h3>
+            <p class="text-gray-600 text-sm">बीट्स बदलें, एरेंजमेंट बदलें — नया वर्जन बनाएँ और रिलीज़ करें। सभी प्रमुख लेबल कवर।</p>
+            <div class="mt-4 text-purple-600 font-semibold">₹ 4,999 से शुरू</div>
+          </div>
+          <!-- सिंक / प्रोडक्शन -->
+          <div class="bg-white p-6 rounded-2xl shadow-md card-hover border-l-4 border-pink-500">
+            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-600 text-xl mb-4"><i class="fas fa-film"></i></div>
+            <h3 class="text-xl font-bold mb-2">सिंक्रोनाइज़ेशन लाइसेंस</h3>
+            <p class="text-gray-600 text-sm">फिल्म, वेब सीरीज, TV सीरियल, विज्ञापन में गाना इस्तेमाल करें। कस्टम कोटेशन।</p>
+            <div class="mt-4 text-pink-600 font-semibold">अनुरोध पर मूल्य</div>
+          </div>
+          <!-- मास्टर उपयोग -->
+          <div class="bg-white p-6 rounded-2xl shadow-md card-hover border-l-4 border-blue-500">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-xl mb-4"><i class="fas fa-headphones"></i></div>
+            <h3 class="text-xl font-bold mb-2">मास्टर उपयोग लाइसेंस</h3>
+            <p class="text-gray-600 text-sm">मूल रिकॉर्डिंग को अपने प्रोजेक्ट (पॉडकास्ट, बैकग्राउंड म्यूजिक) में बजाएँ।</p>
+            <div class="mt-4 text-blue-600 font-semibold">₹ 1,999 से शुरू</div>
+          </div>
+          <!-- प्रिंट लाइसेंस -->
+          <div class="bg-white p-6 rounded-2xl shadow-md card-hover border-l-4 border-green-500">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl mb-4"><i class="fas fa-print"></i></div>
+            <h3 class="text-xl font-bold mb-2">प्रिंट / लिरिक्स लाइसेंस</h3>
+            <p class="text-gray-600 text-sm">गाने के बोल किताबों, वेबसाइट या मर्चेंडाइज में प्रकाशित करें।</p>
+            <div class="mt-4 text-green-600 font-semibold">₹ 499 से शुरू</div>
+          </div>
+          <!-- बल्क / एंटरप्राइज -->
+          <div class="bg-white p-6 rounded-2xl shadow-md card-hover border-l-4 border-amber-500">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 text-xl mb-4"><i class="fas fa-building"></i></div>
+            <h3 class="text-xl font-bold mb-2">प्रोडक्शन हाउस प्लान</h3>
+            <p class="text-gray-600 text-sm">एक साथ कई गानों के लिए बल्क लाइसेंस। वेब सीरीज, TV चैनल्स के लिए खास।</p>
+            <div class="mt-4 text-amber-600 font-semibold">कस्टम प्लान</div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <button class="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700">सभी लाइसेंस देखें →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold">तीन आसान चरणों में <span class="text-indigo-600">लाइसेंस</span></h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center text-3xl font-bold text-indigo-600 mx-auto mb-4">1</div>
+            <h3 class="text-xl font-semibold mb-2">गाना खोजें</h3>
+            <p class="text-gray-500">लाखों गानों में से अपना ट्रैक चुनें। सर्च बार में नाम या कलाकार डालें।</p>
+          </div>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center text-3xl font-bold text-indigo-600 mx-auto mb-4">2</div>
+            <h3 class="text-xl font-semibold mb-2">लाइसेंस प्रकार चुनें</h3>
+            <p class="text-gray-500">कवर, रीमिक्स, सिंक – अपनी जरूरत के अनुसार चुनें और उपयोग की जानकारी भरें।</p>
+          </div>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center text-3xl font-bold text-indigo-600 mx-auto mb-4">3</div>
+            <h3 class="text-xl font-semibold mb-2">भुगतान करें & डाउनलोड करें</h3>
+            <p class="text-gray-500">तुरंत कीमत देखें, ऑनलाइन भुगतान करें और लाइसेंस PDF प्राप्त करें।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SNEAK PEEK + SONG SELECTOR DEMO -->
+    <section id="pricing" class="py-20 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold">तुरंत कीमत <span class="text-indigo-600">जानें</span></h2>
+          <p class="text-gray-600">नीचे गाना और लाइसेंस चुनें, अनुमानित मूल्य दिखेगा (डेमो)</p>
+        </div>
+        <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl max-w-3xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">गाना चुनें</label>
+              <select class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-200" id="songSelect">
+                <option>केसरिया (T-Series)</option>
+                <option>Kesariya (Arijit Singh)</option>
+                <option>Jai Shree Ram (Tips)</option>
+                <option>Vaaste (Sony Music)</option>
+                <option>Lut Gaye (T-Series)</option>
+                <option selected>Kali Kali Zulfon (Saregama)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">लाइसेंस प्रकार</label>
+              <select class="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-indigo-200" id="licenseSelect">
+                <option>कवर सॉन्ग (यूट्यूब, गैर-व्यावसायिक)</option>
+                <option>कवर सॉन्ग (व्यावसायिक / स्ट्रीमिंग)</option>
+                <option>रीमिक्स (इंडी रिलीज)</option>
+                <option>रीमिक्स (मेजर लेबल रिलीज)</option>
+                <option>सिंक्रोनाइज़ेशन (वेब सीरीज - 1 एपिसोड)</option>
+                <option selected>सिंक्रोनाइज़ेशन (फिल्म / टीवी)</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-6 flex justify-between items-center border-t pt-5">
+            <span class="text-gray-600">अनुमानित लाइसेंस शुल्क:</span>
+            <span class="text-3xl font-bold text-indigo-700" id="priceDisplay">₹ 6,999</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">*असल मूल्य लेबल और उपयोग पर निर्भर करेगा।</p>
+          <div class="mt-6 text-center">
+            <button class="bg-indigo-600 text-white px-10 py-3 rounded-full font-semibold">लाइसेंस के लिए आवेदन करें</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS / विश्वास -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold">कलाकार और निर्माता <span class="text-indigo-600">हम पर भरोसा करते हैं</span></h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-50 p-6 rounded-2xl shadow-sm">
+            <div class="flex items-center mb-4"><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i></div>
+            <p class="text-gray-700 italic">"मैंने 'Kesariya' का कवर बनाया और बिना किसी स्ट्राइक के यूट्यूब पर डाल दिया। लाइसेंस लेना बहुत आसान था।"</p>
+            <p class="font-semibold mt-4">— रिया शर्मा, सिंगर</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-2xl shadow-sm">
+            <div class="flex items-center mb-4"><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i></div>
+            <p class="text-gray-700 italic">"हमारी वेब सीरीज के लिए 12 गानों का सिंक लाइसेंस चाहिए था। एक ही प्लेटफॉर्म से सब मिल गया।"</p>
+            <p class="font-semibold mt-4">— विक्रम सिंह, फिल्म निर्माता</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-2xl shadow-sm">
+            <div class="flex items-center mb-4"><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i></div>
+            <p class="text-gray-700 italic">"रीमिक्स रिलीज करने से पहले लीगल टेंशन रहती थी, अब MusicLicense.in से एक क्लिक में निपटारा।"</p>
+            <p class="font-semibold mt-4">— डीजे अर्जुन, रीमिक्स प्रोड्यूसर</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / संपर्क -->
+    <section id="contact" class="py-20 bg-indigo-50">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg">
+          <div class="grid md:grid-cols-2 gap-12">
+            <div>
+              <h2 class="text-3xl font-bold text-gray-800 mb-4">हमसे संपर्क करें</h2>
+              <p class="text-gray-600 mb-6">किसी भी तरह के सवाल या कस्टम लाइसेंस के लिए हमें लिखें।</p>
+              <div class="space-y-4">
+                <div class="flex items-center"><i class="fas fa-phone-alt w-8 text-indigo-600"></i><span>+91 11 4080 1234</span></div>
+                <div class="flex items-center"><i class="fas fa-envelope w-8 text-indigo-600"></i><span>licensing@musiclicense.in</span></div>
+                <div class="flex items-center"><i class="fas fa-map-marker-alt w-8 text-indigo-600"></i><span>मुंबई / दिल्ली NCR (भारत)</span></div>
+              </div>
+            </div>
+            <div>
+              <form class="space-y-4" onsubmit="event.preventDefault(); alert('संदेश भेजा (डेमो)');">
+                <input type="text" placeholder="आपका नाम" class="w-full border border-gray-200 p-3 rounded-xl">
+                <input type="email" placeholder="ईमेल" class="w-full border border-gray-200 p-3 rounded-xl">
+                <textarea rows="3" placeholder="अपना संदेश लिखें..." class="w-full border border-gray-200 p-3 rounded-xl"></textarea>
+                <button class="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold">भेजें</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center md:flex justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <span class="text-2xl font-bold text-white">🎵 MusicLicense.in</span>
+        <p class="text-sm mt-1">भारत का पहला मल्टी-लेबल म्यूजिक लाइसेंस प्लेटफॉर्म</p>
+      </div>
+      <div class="flex justify-center space-x-6 text-xl">
+        <a href="#"><i class="fab fa-instagram hover:text-indigo-400"></i></a>
+        <a href="#"><i class="fab fa-facebook hover:text-indigo-400"></i></a>
+        <a href="#"><i class="fab fa-youtube hover:text-indigo-400"></i></a>
+        <a href="#"><i class="fab fa-linkedin hover:text-indigo-400"></i></a>
+      </div>
+      <div class="text-sm text-gray-500 mt-4 md:mt-0">© 2026 Music License India. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- simple script for mobile menu + price demo -->
+  <script>
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // demo price change based on selections
+    const songSelect = document.getElementById('songSelect');
+    const licenseSelect = document.getElementById('licenseSelect');
+    const priceDisplay = document.getElementById('priceDisplay');
+
+    function updatePrice() {
+      const song = songSelect.value;
+      const license = licenseSelect.value;
+      // random-ish demo price
+      let base = 1999;
+      if (license.includes('व्यावसायिक') || license.includes('मेजर') || license.includes('फिल्म')) base = 12999;
+      else if (license.includes('रीमिक्स')) base = 4999;
+      else if (license.includes('सिंक')) base = 8999;
+      else base = 2999;
+      // add some variation based on song (just for demo)
+      if (song.includes('Kesariya') || song.includes('Lut Gaye')) base += 2000;
+      priceDisplay.innerText = '₹ ' + base.toLocaleString();
+    }
+
+    songSelect.addEventListener('change', updatePrice);
+    licenseSelect.addEventListener('change', updatePrice);
+    updatePrice(); // initial
+  </script>
+  <!-- smooth scroll for anchor links -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        if (!this.classList.contains('md:hidden')) mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
