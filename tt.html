@@ -1,78 +1,80 @@
-Add Jitsi’s `readyToClose` event listener. It fires when the meeting is ended/closed, then you can refresh the page with `window.location.reload()`.
-
-```html
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <script
-      src="https://8x8.vc/vpaas-magic-cookie-aa5768df638f4a4c9d8ec6468c8e1769/external_api.js"
-      async
-    ></script>
+    <title>Video Call</title>
+
+    <script src="https://8x8.vc/vpaas-magic-cookie-aa5768df638f4a4c9d8ec6468c8e1769/external_api.js" async></script>
 
     <style>
-      * {
-        box-sizing: border-box;
-      }
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background: #000;
-      }
+        html,
+        body{
+            width:100%;
+            height:100%;
+            overflow:hidden;
+            background:#000;
+            font-family:Arial, Helvetica, sans-serif;
+        }
 
-      #jaas-container {
-        width: 100vw;
-        height: 100vh;
-        height: 100dvh;
-        overflow: hidden;
-      }
+        #jaas-container{
+            width:100%;
+            height:100dvh;
+        }
 
-      #jaas-container iframe {
-        width: 100% !important;
-        height: 100% !important;
-        border: 0;
-      }
+        /* Fallback for older browsers */
+        @supports not (height: 100dvh){
+            #jaas-container{
+                height:100vh;
+            }
+        }
     </style>
+</head>
 
-    <script type="text/javascript">
-      window.onload = () => {
-        const api = new JitsiMeetExternalAPI("8x8.vc", {
-          roomName:
-            "vpaas-magic-cookie-aa5768df638f4a4c9d8ec6468c8e1769/MUSICWOOB",
+<body>
 
-          parentNode: document.querySelector("#jaas-container"),
+<div id="jaas-container"></div>
 
-          width: "100%",
-          height: "100%",
+<script>
+window.onload = function () {
 
-          configOverwrite: {
-            prejoinPageEnabled: false,
-          },
+    const api = new JitsiMeetExternalAPI("8x8.vc", {
 
-          interfaceConfigOverwrite: {
+        roomName: "vpaas-magic-cookie-aa5768df638f4a4c9d8ec6468c8e1769/BDPS_VIDEO_CHAT",
+
+        parentNode: document.querySelector("#jaas-container"),
+
+        width: "100%",
+        height: "100%",
+
+        configOverwrite: {
+            prejoinPageEnabled: true,
+            startWithAudioMuted: false,
+            startWithVideoMuted: false,
+            disableDeepLinking: false,
+            resolution: 720
+        },
+
+        interfaceConfigOverwrite: {
             MOBILE_APP_PROMO: false,
-          },
+            SHOW_JITSI_WATERMARK: false,
+            SHOW_BRAND_WATERMARK: false,
+            DEFAULT_BACKGROUND: "#000000"
+        }
 
-          // jwt: "YOUR_JWT_HERE"
-        });
+        // jwt: "YOUR_JWT"
+    });
 
-        // Refresh page when user ends or closes the meeting
-        api.addEventListener("readyToClose", () => {
-          window.location.reload();
-        });
-      };
-    </script>
-  </head>
+};
+</script>
 
-  <body>
-    <div id="jaas-container"></div>
-  </body>
+</body>
 </html>
-```
