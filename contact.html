@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact MusicWoob</title>
+  <meta name="description" content="Contact MusicWoob for music distribution, rights, licensing and support.">
+  <meta name="robots" content="index,follow">
+  <style>
+    :root { --accent:#111827; --muted:#6b7280; --border:#e5e7eb; --bg:#f7f7f8; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:#111827; }
+    .wrap { max-width:760px; margin:60px auto; padding:20px; }
+    .card { background:#fff; border:1px solid var(--border); border-radius:22px; padding:34px; box-shadow:0 12px 40px rgba(0,0,0,.06); }
+    h1 { margin:0 0 8px; font-size:32px; letter-spacing:-.5px; }
+    .intro { color:var(--muted); margin:0 0 28px; line-height:1.6; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .full { grid-column:1/-1; }
+    label { display:block; font-size:14px; font-weight:650; margin-bottom:7px; }
+    input, textarea, select {
+      width:100%; padding:13px 14px; border:1px solid #d1d5db; border-radius:12px;
+      font:inherit; outline:none; background:#fff; transition:.2s;
+    }
+    input:focus, textarea:focus, select:focus { border-color:#111827; box-shadow:0 0 0 3px rgba(17,24,39,.08); }
+    textarea { min-height:150px; resize:vertical; }
+    .hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+    button {
+      width:100%; border:0; border-radius:12px; padding:14px 18px; background:#111827; color:#fff;
+      font-weight:700; font-size:15px; cursor:pointer; margin-top:4px;
+    }
+    button:disabled { opacity:.6; cursor:not-allowed; }
+    .status { margin-top:18px; padding:14px; border-radius:12px; display:none; line-height:1.5; }
+    .success { display:block; background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; }
+    .error { display:block; background:#fef2f2; color:#991b1b; border:1px solid #fecaca; }
+    .ticket { font-weight:800; }
+    @media(max-width:650px){ .grid{grid-template-columns:1fr;} .full{grid-column:auto;} .card{padding:24px;} .wrap{margin:25px auto;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>Contact MusicWoob</h1>
+      <p class="intro">Have a question about music distribution, licensing, rights or support? Send us a message and the MusicWoob Team will get back to you as soon as possible.</p>
+
+      <form id="contactForm" novalidate>
+        <div class="grid">
+          <div>
+            <label for="name">Full Name *</label>
+            <input id="name" name="name" type="text" maxlength="100" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" type="email" maxlength="160" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" maxlength="30" autocomplete="tel">
+          </div>
+          <div>
+            <label for="subject">Subject *</label>
+            <input id="subject" name="subject" type="text" maxlength="180" required>
+          </div>
+          <div class="full">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" maxlength="5000" required></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="full">
+            <button id="submitBtn" type="submit">Send Message</button>
+            <div id="status" class="status" role="alert"></div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+<script>
+const API_URL = "https://easysong.in/musicwoob.php";
+const form = document.getElementById("contactForm");
+const btn = document.getElementById("submitBtn");
+const statusBox = document.getElementById("status");
+
+function showError(message) {
+  statusBox.className = "status error";
+  statusBox.textContent = message;
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  statusBox.className = "status";
+  statusBox.textContent = "";
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  try {
+    /*
+     * text/plain is intentionally used here.
+     * It keeps the cross-origin request "simple", avoiding the OPTIONS
+     * preflight that can fail on some free-hosting configurations.
+     */
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=UTF-8",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(data),
+      mode: "cors",
+      credentials: "omit"
+    });
+
+    const raw = await response.text();
+    let result = {};
+
+    try {
+      result = JSON.parse(raw);
+    } catch (_) {
+      throw new Error("The server returned an invalid response. Please try again later.");
+    }
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Unable to send your message.");
+    }
+
+    statusBox.className = "status success";
+    statusBox.innerHTML =
+      "Thank you for contacting MusicWoob. Your message has been received successfully. " +
+      "Our team will review your request and get back to you as soon as possible.<br>" +
+      "Your ticket number is <span class=\"ticket\">" +
+      String(result.ticket || "").replace(/[<>&"]/g, "") +
+      "</span>.";
+
+    form.reset();
+  } catch (err) {
+    if (err instanceof TypeError && /fetch/i.test(err.message)) {
+      showError("We could not connect to the MusicWoob server. Please check your internet connection and try again.");
+    } else {
+      showError(err.message || "Something went wrong. Please try again.");
+    }
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Send Message";
+  }
+});
+</script>
+</body>
+</html>
